@@ -1,0 +1,16 @@
+{
+  "name": "presonal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d Presonal Website"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://BhattAnsh.github.io/Portfolio",
+  "dependencies": {
+    "gh-pages": "^5.0.0"
+  }
+}
