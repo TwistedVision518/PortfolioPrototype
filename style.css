@@ -941,57 +941,14 @@ hr{
   }
 }
 
-/* Styles for the toggle switch */
-.toggle {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
+/* Light mode styles */
+body {
+  background-color: #ffffff;
+  color: #333333;
 }
 
-.toggle input[type="checkbox"] {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.toggle-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border-radius: 34px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.toggle-label::after {
-  content: "";
-  display: block;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  margin: 2px;
-  background: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.2s ease;
-}
-
-/* Styles for the dark mode */
+/* Dark mode styles */
 body.dark-mode {
-  background-color: #222;
-  color: #fff;
-}
-
-.toggle-label.dark-mode {
-  background-color: #888;
-}
-
-.toggle-label.dark-mode::after {
-  transform: translateX(26px);
-  background-color: #222;
+  background-color: #333333;
+  color: #ffffff;
 }

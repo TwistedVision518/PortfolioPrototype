@@ -148,38 +148,44 @@ const section = document.querySelector('.languages');
 // Observe the section element with the IntersectionObserver
 sectionObserver.observe(section);
 
-// Select the toggle switch element
-const darkModeToggle = document.querySelector('#darkModeToggle');
+// Get the dark mode toggle button element
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-// Add an event listener to the toggle switch
-darkModeToggle.addEventListener('change', () => {
-  // Check if the toggle switch is checked
-  if (darkModeToggle.checked) {
-    // Add the 'dark-mode' class to the body element
-    document.body.classList.add('dark-mode');
-  } else {
-    // Remove the 'dark-mode' class from the body element
-    document.body.classList.remove('dark-mode');
-  }
-});
+// Function to switch to dark mode
+function switchToDarkMode() {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    toggleSwitch.checked = true;
+}
 
-// Select the HTML element
-const html = document.querySelector('html');
+// Function to switch to light mode
+function switchToLightMode() {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    toggleSwitch.checked = false;
+}
 
-// Select the toggle switch element
-const darkModeToggle = document.querySelector('#darkModeToggle');
+// Function to switch theme based on toggle state
+function switchTheme(event) {
+    if (event.target.checked) {
+        switchToDarkMode();
+    } else {
+        switchToLightMode();
+    }
+}
 
-// Add an event listener to the toggle switch
-darkModeToggle.addEventListener('change', () => {
-  if (darkModeToggle.checked) {
-    // If the toggle switch is checked, set the dark mode class on the HTML element
-    html.classList.add('dark-mode');
-  } else {
-    // If the toggle switch is unchecked, remove the dark mode class from the HTML element
-    html.classList.remove('dark-mode');
-  }
-});
+// Event listener for toggle switch
+toggleSwitch.addEventListener('change', switchTheme);
 
+// Check local storage for theme
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+    }
+}
 
 
 
