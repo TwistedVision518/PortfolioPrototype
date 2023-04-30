@@ -163,5 +163,23 @@ darkModeToggle.addEventListener('change', () => {
   }
 });
 
+// Select the HTML element
+const html = document.querySelector('html');
+
+// Select the toggle switch element
+const darkModeToggle = document.querySelector('#darkModeToggle');
+
+// Add an event listener to the toggle switch
+darkModeToggle.addEventListener('change', () => {
+  if (darkModeToggle.checked) {
+    // If the toggle switch is checked, set the dark mode class on the HTML element
+    html.classList.add('dark-mode');
+  } else {
+    // If the toggle switch is unchecked, remove the dark mode class from the HTML element
+    html.classList.remove('dark-mode');
+  }
+});
+
+
 
 
