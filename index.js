@@ -148,5 +148,20 @@ const section = document.querySelector('.languages');
 // Observe the section element with the IntersectionObserver
 sectionObserver.observe(section);
 
+// Select the toggle switch element
+const darkModeToggle = document.querySelector('#darkModeToggle');
+
+// Add an event listener to the toggle switch
+darkModeToggle.addEventListener('change', () => {
+  // Check if the toggle switch is checked
+  if (darkModeToggle.checked) {
+    // Add the 'dark-mode' class to the body element
+    document.body.classList.add('dark-mode');
+  } else {
+    // Remove the 'dark-mode' class from the body element
+    document.body.classList.remove('dark-mode');
+  }
+});
+
 
 
