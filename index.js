@@ -148,44 +148,6 @@ const section = document.querySelector('.languages');
 // Observe the section element with the IntersectionObserver
 sectionObserver.observe(section);
 
-// Get the dark mode toggle button element
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-
-// Function to switch to dark mode
-function switchToDarkMode() {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-    toggleSwitch.checked = true;
-}
-
-// Function to switch to light mode
-function switchToLightMode() {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-    toggleSwitch.checked = false;
-}
-
-// Function to switch theme based on toggle state
-function switchTheme(event) {
-    if (event.target.checked) {
-        switchToDarkMode();
-    } else {
-        switchToLightMode();
-    }
-}
-
-// Event listener for toggle switch
-toggleSwitch.addEventListener('change', switchTheme);
-
-// Check local storage for theme
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
-}
 
 
 
