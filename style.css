@@ -617,6 +617,7 @@ hr{
 .card-top img {
   display: block;
   width: 90%;
+  height: 200px;
   border-radius: 20px;
   margin: auto;
 }
